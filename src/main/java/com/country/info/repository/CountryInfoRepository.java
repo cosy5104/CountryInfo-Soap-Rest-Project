@@ -15,7 +15,6 @@ public interface CountryInfoRepository extends JpaRepository<CountryInfo, Long> 
     Optional<CountryInfo> findByIsoCode(String isoCode);
 
     Optional<CountryInfo> findByNameIgnoreCase(String name);
-
     boolean existsByIsoCode(String isoCode);
 
     @Query("SELECT c FROM CountryInfo c LEFT JOIN FETCH c.languages WHERE c.id = :id")
